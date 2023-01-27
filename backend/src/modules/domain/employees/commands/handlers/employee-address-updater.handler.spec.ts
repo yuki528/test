@@ -19,7 +19,7 @@ describe('Employee Address Updater', () => {
       const handler = new EmployeeAddressUpdater(employeeRepository);
 
       const params = {
-        employeeId: 100,
+        employeeId: 101, //change this to 100 to make the test pass
         address: 'San Pedro Sula, Calle 1, Casa 5',
         city: 'San Pedro Sula',
         country: 'Honduras',
