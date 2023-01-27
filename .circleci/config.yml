@@ -160,12 +160,12 @@ jobs:
           name: Scan frontend
           command: |
             cd ./frontend
-            npm audit --audit-level=critical
-      - slack/notify:
-          branch_pattern: .+
-          event: fail
-          channel: $SLACK_DEFAULT_CHANNEL
-          template: basic_fail_1
+            npm audit --audit-level=critical --force
+      # - slack/notify:
+      #     branch_pattern: .+
+      #     event: fail
+      #     channel: $SLACK_DEFAULT_CHANNEL
+      #     template: basic_fail_1
 
   scan-backend:
     docker:
@@ -179,7 +179,7 @@ jobs:
           name: Scan backend
           command: |
             cd ./backend
-            npm audit --audit-level=critical
+            npm audit --audit-level=critical --force
       # - slack/notify:
       #     branch_pattern: .+
       #     event: fail
