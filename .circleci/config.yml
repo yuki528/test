@@ -272,7 +272,7 @@ jobs:
       - run:
           name: Run database migration
           command: |
-            apk add --update --no-cache tar gzip nodejs npm aws-cli curl
+            #apk add --update --no-cache tar gzip nodejs npm aws-cli curl
             cd ./backend
             pwd
             npm install
