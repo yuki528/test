@@ -274,7 +274,7 @@ jobs:
           command: |
             cd ./backend
             pwd
-            npm run migrations > migrations_log.txt
+            npm run migrations >> migrations_log.txt
             cat ./migrations_log.txt
       - run:
           name: Send database migration status to memstash
