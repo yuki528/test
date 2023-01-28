@@ -272,10 +272,13 @@ jobs:
       - run:
           name: Run database migration
           command: |
+            apk add --update --no-cache tar gzip nodejs npm aws-cli curl
             cd ./backend
             pwd
+            npm install
+            npm run build
             npm run migrations >> migrations_log.txt
-            #cat ./migrations_log.txt
+            cat ./migrations_log.txt
       - run:
           name: Send database migration status to memstash
           command: |
