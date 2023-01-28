@@ -1,64 +1,41 @@
-We are archiving this repository because we do not want learners to push personal development to the current repository. If you have any issues or suggestions to make, feel free to:
-- Utilize the https://knowledge.udacity.com/ forum to seek help on content-specific issues.
-- [Submit a support ticket](https://udacity.zendesk.com/hc/en-us/requests/new) along with the link to your forked repository. 
-- If you are an enterprise learner, please [Submit a support ticket here](https://udacityenterprise.zendesk.com/hc/en-us/requests/new?ticket_form_id=360000279131)
+# UdaPeople
 
-## Give your Application Auto-Deploy Superpowers
+This project should help you to master CI/CD concepts. The detailed description can be found in [Introduction](instructions/Instructions.md).
 
-In this project, you will prove your mastery of the following learning objectives:
+## Project Submission Items
+### Presentation
+The following [slides](./presentation.pdf) explain the key benefits of CI/CD for Cloud-based software products.
 
-- Explain the fundamentals and benefits of CI/CD to achieve, build, and deploy automation for cloud-based software products.
-- Utilize Deployment Strategies to design and build CI/CD pipelines that support Continuous Delivery processes.
-- Utilize a configuration management tool to accomplish deployment to cloud-based servers.
-- Surface critical server errors for diagnosis using centralized structured logging.
+### Urls
+- Public Url to GitHub repository [URL01]
+  - https://github.com/OlgaLyudchik/udacity-cloud-devops-project-udapeople
 
-![Diagram of CI/CD Pipeline we will be building.](udapeople.png)
+- Public URL for the S3 Bucket (the green candidate frontend) [URL02]
+  - http://udapeople-f92c214.s3-website-us-west-2.amazonaws.com/index.html
 
-### Instructions
+- Public URL for the CloudFront distribution (the blue production frontend) [URL03]
+  - d1lhzqzgkfq7e8.cloudfront.net
 
-* [Selling CI/CD](instructions/0-selling-cicd.md)
-* [Getting Started](instructions/1-getting-started.md)
-* [Deploying Working, Trustworthy Software](instructions/2-deploying-trustworthy-code.md)
-* [Configuration Management](instructions/3-configuration-management.md)
-* [Turn Errors into Sirens](instructions/4-turn-errors-into-sirens.md)
+- Public URLs to deployed application backend in EC2 [URL04]
+  - ec2-34-216-61-0.us-west-2.compute.amazonaws.com
+  - http://ec2-34-216-61-0.us-west-2.compute.amazonaws.com:9100/metrics
 
-### Project Submission
+- Public URL to the Prometheus server [URL05]
+  - http://ec2-54-202-177-103.us-west-2.compute.amazonaws.com:9090
 
-For your submission, please submit the following:
-
-- A text file named `urls.txt` including:
-  1. Public Url to GitHub repository (not private) [URL01]
-  1. Public URL for your S3 Bucket (aka, your green candidate front-end) [URL02]
-  1. Public URL for your CloudFront distribution (aka, your blue production front-end) [URL03]
-  1. Public URLs to deployed application back-end in EC2 [URL04]
-  1. Public URL to your Prometheus Server [URL05]
-- Your screenshots in JPG or PNG format, named using the screenshot number listed in the instructions. These screenshots should be included in your code repository in the root folder.
-  1. Job failed because of compile errors. [SCREENSHOT01]
-  1. Job failed because of unit tests. [SCREENSHOT02]
-  1. Job that failed because of vulnerable packages. [SCREENSHOT03]
-  1. An alert from one of your failed builds. [SCREENSHOT04]
-  1. Appropriate job failure for infrastructure creation. [SCREENSHOT05]
-  1. Appropriate job failure for the smoke test job. [SCREENSHOT06]
-  1. Successful rollback after a failed smoke test. [SCREENSHOT07]  
-  1. Successful promotion job. [SCREENSHOT08]
-  1. Successful cleanup job. [SCREENSHOT09]
-  1. Only deploy on pushed to `master` branch. [SCREENSHOT10]
-  1. Provide a screenshot of a graph of your EC2 instance including available memory, available disk space, and CPU usage. [SCREENSHOT11]
-  1. Provide a screenshot of an alert that was sent by Prometheus. [SCREENSHOT12]
-
-- Your presentation should be in PDF format named "presentation.pdf" and should be included in your code repository root folder. 
-
-Before you submit your project, please check your work against the project rubric. If you haven’t satisfied each criterion in the rubric, then revise your work so that you have met all the requirements. 
-
-### Built With
-
-- [Circle CI](www.circleci.com) - Cloud-based CI/CD service
-- [Amazon AWS](https://aws.amazon.com/) - Cloud services
-- [AWS CLI](https://aws.amazon.com/cli/) - Command-line tool for AWS
-- [CloudFormation](https://aws.amazon.com/cloudformation/) - Infrastrcuture as code
-- [Ansible](https://www.ansible.com/) - Configuration management tool
-- [Prometheus](https://prometheus.io/) - Monitoring tool
-
-### License
-
-[License](LICENSE.md)
+### Screenshots
+1. Backend build failed: ![SCREENSHOT01](screenshots/[S01]_backend_build_failed.png)
+2. Backend test failed: ![SCREENSHOT02](screenshots/[S02]_backend_test_failed.png)
+3. Backend scan failed: ![SCREENSHOT03](screenshots/[S03]_scan_backend_failed.png)
+4. Slack CircleCI integration: ![SCREENSHOT04](screenshots/[S04]_slack_alert_integration.png)
+5. Deploy backend infrastructure failed: ![SCREENSHOT05](screenshots/[S05]_deploy_backend_failed.png)
+6. Frontend smoke test failed: ![SCREENSHOT06](screenshots/[S06]_frontend_smoke_test_failed.png)
+7. Rollback after failed smoke test succeeded: ![SCREENSHOT07](screenshots/[S07]_rollback_after_failed_smoke_test.png)
+8. Promotion of infrastructure succeeded: ![SCREENSHOT08](screenshots/[S08]_update_cloudfront_succeeded.png)
+9. Cleanup old stack succeeded: ![SCREENSHOT09](screenshots/[S09]_cleaup_old_stack_succeeded.png)
+10. Skip deployment for non-`main` branch: ![SCREENSHOT10](screenshots/[S10]_skip_deployment_for_non-main_branch.png)
+11. Graphs for backend EC2 server that monitor disk I/O, available memory, available disk space, and CPU usage.
+    1. Disk I/O ![SCREENSHOT11-1](screenshots/[S11-1]_monitoring_disk_io.png)
+    2. Available memory ![SCREENSHOT11-2](screenshots/[S11-2]_monitoring_available_memory.png)
+    3. CPU usage ![SCREENSHOT11-3](screenshots/[S11-3]_monitoring_cpu_usage.png)
+12. Slack Prometheus integration: ![SCREENSHOT12](screenshots/[S12]_slack_prometheus_integration.png)
