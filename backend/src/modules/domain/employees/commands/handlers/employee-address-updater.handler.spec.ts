@@ -19,7 +19,7 @@ describe('Employee Address Updater', () => {
       const handler = new EmployeeAddressUpdater(employeeRepository);
 
       const params = {
-        employeeId: 100, 
+        employeeId: 100,
         address: 'San Pedro Sula, Calle 1, Casa 5',
         city: 'San Pedro Sula',
         country: 'Honduras',
