@@ -48,4 +48,4 @@ Resources:
         - Key: Name
           Value: !Sub backend-${ID}
         - key: Project
-           Value: Udapeople
+          Value: Udapeople
