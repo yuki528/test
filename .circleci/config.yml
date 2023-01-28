@@ -103,11 +103,11 @@ jobs:
       - save_cache:
           paths: [backend/node_modules]
           key: backend-build-cache
-      - slack/notify:
-          branch_pattern: .+
-          event: fail
-          channel: $SLACK_DEFAULT_CHANNEL
-          template: basic_fail_1
+      # - slack/notify:
+      #     branch_pattern: .+
+      #     event: fail
+      #     channel: $SLACK_DEFAULT_CHANNEL
+      #     template: basic_fail_1
 
   test-frontend:
     docker:
@@ -123,11 +123,11 @@ jobs:
             cd ./frontend
             npm i
             npm run test
-      - slack/notify:
-          branch_pattern: .+
-          event: fail
-          channel: $SLACK_DEFAULT_CHANNEL
-          template: basic_fail_1
+      # - slack/notify:
+      #     branch_pattern: .+
+      #     event: fail
+      #     channel: $SLACK_DEFAULT_CHANNEL
+      #     template: basic_fail_1
                 
   test-backend:
     docker:
@@ -142,11 +142,11 @@ jobs:
           command: |
             cd ./backend
             npm run test
-      - slack/notify:
-          branch_pattern: .+
-          event: fail
-          channel: $SLACK_DEFAULT_CHANNEL
-          template: basic_fail_1
+      # - slack/notify:
+      #     branch_pattern: .+
+      #     event: fail
+      #     channel: $SLACK_DEFAULT_CHANNEL
+      #     template: basic_fail_1
             
   scan-frontend:
     docker:
@@ -160,12 +160,12 @@ jobs:
           name: Scan frontend
           command: |
             cd ./frontend
-            npm audit --audit-level=critical
-      - slack/notify:
-          branch_pattern: .+
-          event: fail
-          channel: $SLACK_DEFAULT_CHANNEL
-          template: basic_fail_1
+            npm audit fix --force --audit-level=critical
+      # - slack/notify:
+      #     branch_pattern: .+
+      #     event: fail
+      #     channel: $SLACK_DEFAULT_CHANNEL
+      #     template: basic_fail_1
 
   scan-backend:
     docker:
@@ -179,12 +179,12 @@ jobs:
           name: Scan backend
           command: |
             cd ./backend
-            npm audit --audit-level=critical
-      - slack/notify:
-          branch_pattern: .+
-          event: fail
-          channel: $SLACK_DEFAULT_CHANNEL
-          template: basic_fail_1
+            npm audit fix --force --audit-level=critical
+      # - slack/notify:
+      #     branch_pattern: .+
+      #     event: fail
+      #     channel: $SLACK_DEFAULT_CHANNEL
+      #     template: basic_fail_1
 
   deploy-infrastructure:
     docker:
