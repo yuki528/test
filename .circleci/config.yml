@@ -241,7 +241,7 @@ jobs:
           at: .
       - add_ssh_keys:
           fingerprints: 
-            - "29:77:dd:47:fc:f7:ff:f1:f6:94:bd:3c:d6:10:a2:f9"
+            - "67:98:f6:79:30:46:76:a8:3a:f6:6b:d0:13:b6:9d:93"
       - run:
           name: Install dependencies
           command: |
@@ -275,7 +275,7 @@ jobs:
             cd ./backend
             pwd
             npm run migrations >> migrations_log.txt
-            cat ./migrations_log.txt
+            #cat ./migrations_log.txt
       - run:
           name: Send database migration status to memstash
           command: |
@@ -341,7 +341,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints: 
-            - "29:77:dd:47:fc:f7:ff:f1:f6:94:bd:3c:d6:10:a2:f9"
+            - "67:98:f6:79:30:46:76:a8:3a:f6:6b:d0:13:b6:9d:93"
       - attach_workspace:
           at: .
       - restore_cache:
